@@ -1,0 +1,6 @@
+* Plantillas:
+    - Simplificacion de código con paquete shortcuts.
+        -> Trae el método render() que ayuda a mejorar el código.
+    - Plantillas incrustradas (plantilla dentro de plantilla).
+        -> Sirve para unir varias plantillas dentro de otra.
+        -> Incluir otras plantillas independientes en una sola, sin necesidad de copiar el código en esta última.

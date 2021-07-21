@@ -1,0 +1,13 @@
+ * Plantillas:
+    - Condicionales en plantillas.
+        -> Evaluar condiciones posibles con las variables creadas.
+            Se puede utilizar estructuras de control dentro de las plantillas.
+    - Filtros.
+        -> Se utiliza el símbolo '|'
+        Ej: 
+            - Variables -> nombre|upper 
+            - Listas -> 'lista'|first|lower -> obtiene la primera letra de la lista y la convierte en mínuscula.
+    - Cargadores de plantillas.
+        -> Son simplificadores para cargas varias plantillas a la vez con 'loader'
+        Importar el loader -> from django.template import loader 
+        El cual permite cargar las plantillas que están en una dirección en específico.

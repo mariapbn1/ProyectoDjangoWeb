@@ -1,0 +1,8 @@
+* PostgreSQL
+    - Instalar:
+        -> https://www.postgresql.org/download/linux/debian/
+    - Comandos:
+        -> https://www.librebyte.net/base-de-datos/comandos-para-administrar-postgres/
+
+* Para conectar con PostgreSQL:
+    - sudo apt-get install python-psycopg2

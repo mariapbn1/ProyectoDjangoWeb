@@ -1,0 +1,23 @@
+<!--HTML PADRE-->
+
+<html>
+    <head>
+        <!--Para indicarle que el titulo puede de cambiar-->
+        <title>
+            
+            {% block title %} <!--Zona cambiante--> {% endblock %}
+        </title>
+    </head>
+    <body>
+        <!--Contenido común a todas las plantillas que hereden de base.html-->
+        <h1 style="background-color: darkgreen; text-align: center;">Título</h1>
+        {% include "superior/barra.html" %}
+        <h3>Prueba de muchas pruebas</h3>
+        <!--Aquí irá el contenido de todas la páginas-->
+        {% block content %}
+        <!--Zona cambiante-->
+        {% endblock %}
+
+        <p style="background-color: darkgoldenrod; text-align: center;">Pruebas, muchas, muchas pruebas</p>
+    </body>
+</html>

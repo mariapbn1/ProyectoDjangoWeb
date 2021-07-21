@@ -1,0 +1,13 @@
+ * Plantillas:
+    - Llamada a métodos desde Plantillas
+        * Jerarquía u orden en llamadas desde plantillas.
+            -> Django, cuando se encuentra con un punto sigue un orden de llamada para saber a quien pertence ese punto:
+                - Diciconarios.
+                - Atributo.
+                - Método.
+                - Índice de lista.
+    - Uso de listas en contexto y plantillas.
+        * Se utiliza la nomenclatura de python, es decir la posición, el indice.
+        * Se puede integrar código python en las plantillas.
+    - Estructuras de control de flujo en plantillas.
+    

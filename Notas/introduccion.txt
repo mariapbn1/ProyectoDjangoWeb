@@ -1,0 +1,30 @@
+¿Qué es Django?
+    * Es un Framework web de código abierto escrito en Python
+
+¿Que es un Framework?
+    * Framework -> marco|entorno de trabajo
+    * Es un marco de trabajo formado por un conjunto de herramientas, librerías y buenas prácticas.
+
+¿Para qué sirve Django?
+    * Crear sitios web (complejos) de forma rápida y sencilla.
+    * Django facilita tareas repetitivas, pesadas y comunes en el momento de crear sitios web. 
+        
+* Patrón MVC (Modelo Vista Controlador)
+    -> Es funcional.
+    -> Matenible.
+    -> Escalable -> si hay nuevas cosas que colocar será más fácil.
+    -> Consiste en dividir cualquier aplicación en tres módulos:
+        * Modelo -> Se encarga de gestionar los datos. Obtener información de la base de datos.
+        * Vista -> Muestra la información al usuario.
+        * Controlador -> Gestiona toda las comunicaciones que hay entre la vista al Modelo:
+            ej: El usuario realiza una petición, rellena un formulario (vista).
+                Esa petición se pasa al controlador, el cual le envía la información al modelo.
+                Este último le envía los datos solicitado devuelta al controlador
+                Y por último se las devuelve a la vista, el cual verá el usuario.
+
+* Django utiliza MTV (Model Template View)
+    -> A comparación del anterior:
+            Vista -> Template
+            Controlador -> View
+            Modelo -> Model
+    -> La filosofia es la misma que con MVC.

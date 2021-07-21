@@ -1,0 +1,10 @@
+ * Plantillas:
+    - Uso de variables en plantillas:
+        - Es posible, desde una plantillas, hacer referencias a valores almacenados en variables que se 
+            encuentran en las vistas.
+        - Cómo recuperar ese valor almacenado:
+            - El contexto que se crea para imprimir la plantalla, se le agrega un diccionario (clave:valor)-
+                Por ende, en la plantilla se llama de la siguiente manera:
+                    <p>Texto: {{nombre_identificativo|clave del diccionarios}} </p>
+    - Acceso a Objetos y propiedades desde plantillas.
+        - Uso de diccionarios en contexto.

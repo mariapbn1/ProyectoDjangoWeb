@@ -1,0 +1,3 @@
+ * Contenido dinámico y paso de parámetros en URL:
+    - Utiliza URL friendly -> es decir url sencillas y prácticas
+ * Pasar parámetros en la url

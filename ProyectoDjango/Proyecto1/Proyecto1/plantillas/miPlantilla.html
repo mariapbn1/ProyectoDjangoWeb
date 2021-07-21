@@ -1,0 +1,41 @@
+<html>
+	<body>
+
+		{% include "superior/barra.html" %}
+		<!--Para incluir otras plantillas-->
+
+
+
+		<h2 style="color: red;">Hola alumnos, estamos viendo nuestra primera plantilla.</h2>
+		<!--COmentarios python-->
+		{# comentarios python de una línea #}
+
+		{% comment %}
+		Comentarios de
+		varias
+		líneas
+		{% endcomment %}
+
+		{% if nombre == 'Juanito' %}
+			<p>El curso lo imparte el profesor titular.</p>
+		{%else%}
+			<p>El curso lo imparte el profesor suplente.</p>
+		{%endif%}
+		<!--Un filtro es | -> que sería una tubería-->
+		<p>El nombre del profesor es {{nombre|lower}} {{apellido.upper}}</p>
+		<p>La fecha actual (día de hoy): {{fecha_actual.day}} / {{fecha_actual.month}} / {{fecha_actual.year}}</p>
+		<p><strong>Temas del curso:</strong></p>
+		<p>
+			<!--Recorre todos los elemento de la lista 'temas' y a cada elemento, a cada vuelta del bucle, le vas a llamar 'tema'--->
+		<ul>
+			{% if temas%}
+				{% for tema in temas %}
+					<li>{{tema|first|lower}}</li>
+				{% endfor %}
+			{% else%}
+				<p>No hay elementos que mostrar.</p>
+			{% endif %}
+		</ul>
+		</p>
+	</body>
+</html>

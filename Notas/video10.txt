@@ -1,0 +1,4 @@
+ * Plantillas:
+    - Herencia de plantillas:
+        -> Consiste en crear una plantilla padre, del cual heredarán las plantillas hijas.
+            Es decir que la plantilla padre tiene objetos que pueden heredar las plantillas hijas.

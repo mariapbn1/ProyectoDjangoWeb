@@ -1,0 +1,30 @@
+ * Panel de adiministración:
+    - Es el modulo que más control tiene sobre la página web. En el se puede disponer la mayoría de funcionalidades.
+    - Para crearlo:
+        1. Crear super usuario:
+            -> python3 manage.py createsuperuser
+        2. Manipular tablas desde el planel de adiministración:
+            -> Importar los modelos:
+                from gestionPEdidos.model import Clientes
+                admin.site.register(Clientes) # -> Para que el panel de adminsitración tengamos dispoble la tabla de Clientes
+        3. Personalizar los nombres de los campos en el panel de adminsitración:
+            -> Se agrega verbose_name="nombre alias" en los parámetros del campo del modelo
+            Ej: direccion = models.CharField(max_length=50, verbose_name="La dirección")
+            . Se puede utilizar para cualquier campo.
+        3.1. Segunda manera de Personalizarlos:
+            ->  tlfno = models.CharField("El teléfono",max_length=8)
+            - no se puede usar con campos de tipo foreign key o campos para relacionar tablas de muchos a muchos.
+        4. Para ver más campos, más información de los modelos con el método __Str__, pero desde el módulo de admin:
+            ->  class ClientesAdmin(admin.ModelAdmin):
+                    list_display = ("nombre","direccion","tlfno")
+            - list_display -> Para indicar que campos se quiere ver en el panel de adminsitración.
+        5. Para realizar busquedas con filtros :
+            -> search_fields = ("nombre","tlfno")
+            - Para general una tabla de contenido:
+                -> list_filter -> Campo por el que vamos a filtrar
+        6. Para agregar una miga de pan:
+            -> date_hierarchy = "fecha"
+        7. Cambiar el idioma:
+            -> setting -> LANGUAGE_CODE = 'es-eu'
+        8. Manejo de permisos:
+            -> staff -> que tiene permiso de entrar al panel de adminsitración

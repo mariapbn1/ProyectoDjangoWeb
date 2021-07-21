@@ -1,0 +1,8 @@
+ * Django trabaja con dos componentes fundamentales:
+    -> Request -> Para crear las peticiones.
+    -> HttpResponse -> Envia la respuestas al servidior
+    Cuando una página es solicitada (request) crea un objeto HttpResponse que contiene los datos acerca de la petición solicitada.
+    Django carga la vista pasando el HttpRequest como primer argumento de la funcion vista (view). Cada vista es responsable de devolver
+    un objeto HttpResponse.
+
+ * views -> donde se almacenará los controladores, las funciones del proyecto.

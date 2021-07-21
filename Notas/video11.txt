@@ -1,0 +1,14 @@
+Proyecto vs Aplicación:
+    ___Proyecto__
+    -> Un proyecto puede tener o no una aplicación.
+
+    __Aplicación__ 
+    -> Es un paquete o modulo que hace una suma de tareas concretas.
+    -> Siempre va a estar en un proyecto.
+    -> Permite la reutilizar|modularización. 
+
+ * Modelo:
+    - Base de datos:
+        -> La crea Django automáticamente.
+        -> Solo se tiene que crear las tablas en la clase Model.
+        -> No se puede crear un modelo sin una aplicación.

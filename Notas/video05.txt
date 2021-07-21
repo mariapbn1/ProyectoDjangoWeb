@@ -1,0 +1,27 @@
+ * ¿Qué son las plantillas?
+    - Cadenas de texto (HTML casi siempre).
+
+ * ¿Para qué sirven?
+    - Para separar la parte lógica (datos) del proyecto, es decir los datos de la parte visual (presentación), 
+        de un documento web.
+
+ * ¿Cómo se utilizan?
+    - De diversas formas.
+        La más habitual:
+        -> Guardar la cadena de texto (documento HTML) en un documento independiente y cargandolo a la vista.
+
+ * Ventajas:
+    - Se pueden realizar cambios del diseño con independencia del código (lógica) de la vista.
+    - Se puede diversificar el trabajo del proyecto. Separar cada rol con cada tarea: programadores a código,
+        diseñadores a presentación.
+    - Se puede trabajar a la vez en las dos disciplinas (lógicas y diseño). Ya que todo está por separado
+ 
+ * ¿Cómo se usan las plantillas?
+    1. Creación de un objeto de tipo Template:
+        -> plt = Template(doc_externo.read())
+    2. Creación de contexto:
+        - Contexto -> son los datos adicionales que puede llegar a utilizar el Template (variables, funciones, etc).
+        -> ctx = Context()
+    3. Renderizar el objeto Template.
+        - 
+        -> documento = plt.render(ctx)

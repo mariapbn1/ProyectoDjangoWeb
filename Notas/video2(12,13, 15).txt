@@ -1,0 +1,100 @@
+ * Instalación Local VS Instación Virtual
+
+    __LOCAL__
+        * Una única versión de Django en todos los proyecto.
+        * Una única versión de Python en todos los proyecto.
+        * Mismas dependencias para todos los proyectos.
+
+    __VIRTUAL__
+        * Permite varias versiones de Django en diferentes proyectos.
+        * Permite varias versiones de Python en diferentes proyectos.
+        * Diferentes dependenciaspara todos los proyectos.
+        * Permite igualar entornos de desarrollo-pruebas-producción.
+    
+ * Gestores soportados de bases de datos:
+    - SQLite3: Gestor de BBDD por defecto.
+    - PostgreSQL: Gestor recomendado.
+    - Mysql.
+    - Oracle.
+
+ * Con conectores ofrecidos por terceros:
+    - SQL Server.
+    - SAP SQL.
+    - DB2.
+    - Firebird.
+    - Etc.
+
+ * manage.py -> es un utilidad de línea de comandos que permite interactuar con los proyectos Django.
+
+ * Desripción de archivos:
+   - __init__ -> Sirve para que Python trate el directorio de mi sitio como un paquete.
+   - settings -> Contiene todas las configuraciones del proyecto.
+   - urls -> Alamacena las urls que va a utilizar el proyecto. Ej: una tabla de contenido.
+   - wsgi -> Es relativo al servidor web.
+
+COMANDOS:
+
+ * Para crear un proyecto django:
+   -> python3 -m django startproject nombreProyecto
+
+ * Para crear la aplicación:
+   -> python3 manage.py migrate startapp
+
+ * Para crear la base de datos (por defecto SQLite3):
+   * Crear la base de datos haciendo la migración.
+      -> python3 manage.py makemigrations 
+   * Para crear las tablas:
+      * Generar el código SQL:
+         -> python3 manage.py sqlmigrate nombreAplicacion númeroMigración
+      * Utilice el código generado anteriormente para que cree las tablas en la base de datos:
+         -> python3 manage.py migrate
+      * Para manipular la base de datos desde consola:
+         -> python3 manage.py shell
+         - Para comenzar en esto toca primero importar el proyecto:
+            -> from directorio import Modelo
+               Ej: from gestionPedidos.models import Articulos
+         - Insertar registros:
+            -> variablex = Modelo(propiedad=valor)
+               Ej: art = Articulos(nombre='Mesa',seccion='Decoracion',precio=90)
+               - Para guardar los cambios:
+                  variablex.save()
+                  Ej: art.save()
+         - Para actualizar:
+            -> variablex.campoQueQuiereCambiar=valorACambiar
+               Ej: art.precio=95
+               - Para guardar cambios:
+                  -> art.save()
+         - Para eliminar datos:
+            -> variableParaGuardar = Modelo.objects.get(EspecificarCriterio)
+               Ej: art5 = Articulos.objects.get(id=2)
+               - Para guardar:
+                  -> variablePAraGuardar.detele()
+                  Ej: art5.delete()
+         - Consulta:
+            -> variableParaGuardar = Model.objects.all()
+               Ej: lista = Articulos.objects.all()
+               - Para tener una mejor vista:
+                  -> variableParaGuardar.query.__str__()
+                     Ej: lista.query.__str__()
+            - Con WHERE:
+               -> Modelo.objects.filter(criterios de busqueda)
+               Ej: Articulos.object.filter(seccion='Deportes')
+                   Articulos.objects.filter(nombre='Mesa',seccion='Decoracion') -> Dos busquedas
+                   Articulos.objects.filter(seccion='Deportes',precio__gte=100) -> equivale a > mayor que
+                   Articulos.objects.filter(seccion='Deportes',precio__lte=100) -> equivale a < menor que
+                                                                        __range -> equivale a rango 
+                   Articulos.objects.filter(precio__gte=50).order_by('precio')  -> equivale a order by
+                   Articulos.objects.filter(precio__gte=50).order_by('-precio') -> equivalente a order by(campo) desc
+               - Para devuelver cosas legibles y entendibles:
+                  ->  Hacer un método __str__
+ * Comprobar el funcionamiento:
+   -> Ejecutar el servidor y una vez hecho se va al navegador con la url correspondiente.
+
+   * Servidor de pruebas:
+      No recomendable para proyectos grandes.
+      -> python3 manage.py runserver
+
+  * Para averiguar si todo marcha bien en el proyecto.
+      -> python3 manage.py check nombreAplicacion
+   
+   
